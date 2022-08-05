@@ -1,28 +1,39 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+   <div>
+      <div class="text-center mt-4">
+         <h1>Projeto Gerenciamento de domínio</h1>
+         <h6 class="text-secondary">
+            Projeto desenvolvido para fins de capacitação. <span class="fa fa-check"></span>
+         </h6>
+      </div>
+      <div class="bg-secondary py-3 mt-4">
+         <div class="container">
+            <div class="row text-white">
+               <div class="col-md-6">
+                <h5>Sufixo <span class="badge bg-info">0</span></h5>
+                  <div class="card">
+                     <div class="card-body"></div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                <h5>Prefixo <span class="badge bg-info">0</span></h5>
+                  <div class="card">
+                     <div class="card-body"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.css';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+   name: 'App',
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
