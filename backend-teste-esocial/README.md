@@ -1,39 +1,58 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## Back-end do Projeto Teste E-Social
 
-## Modelo de Projeto Laravel com Docker
+Projeto desenvolvido para dar suporte de back-end da avaliação técnica.
 
-Projeto desenvolvido para servir como modelo para trabalhar com o Laravel em containers docker.
-Já implementei algumas pré configurações abaixo:
+Tecnologias utilizadas:
 
+-   **[Docker:20.10.17](https://www.docker.com/)**
 -   **[nginx:alpine]**
 -   **[mysql:5.7.22](https://www.mysql.com/)**
 -   **[redis]**
 -   **[Laravel:9](https://laravel.com/)**
 -   **[PHP:8.0\*](https://www.php.net/manual/pt_BR/index.php)**
 
-## Instalar App
+## Pré-requisitos
 
 ```bash
-$ git clone https://github.com/luizsantos85/app-laravel-docker.git
+** Necessário ter docker instalado.
+```
+
+## Instalação do Back-end
+
+```bash
+$ git clone https://github.com/luizsantos85/backend-teste-eureka.git
 
 **observar as configurações de portas e usuario no arquivo docker-composer.yml
 
-**Copiar o .env.example e gerar o .env, fazer as modificações das portas (se necessário) e usuario do DB
+**Copiar o .env.example e gerar o .env, fazer as modificações das portas (se necessário)
+e usuario do DB
 
-**será criada uma pasta .docker/mysql para os arquivos de banco de dados
+**será criada uma pasta .docker/mysql para os arquivos de banco de dados ao inicializar os containers
 
 **Inicializar os containers
 $ docker compose up -d
 
-**Acessar o container do laravel
+**Acessar o container docker do laravel
 $ docker compose exec app bash
 
-**Instalar os packges do laravel
+**Instalar os packages do laravel
 $ composer install
 
 **Gerar a key do laravel
 $ php artisan key:generate
 
-**acessar localhost:(porta selecionada) para teste
+**acessar localhost:8000/api/ping para verificar se o sistema esta rodando
 
+**rodar as migrations para gerar as tabelas do banco de dados
+$ php artisan migrate
+
+**Parar os containers docker
+$ docker compose down
+
+```
+
+## Rotas
+
+```bash
+* Post('localhost:8000/api/');
 ```
