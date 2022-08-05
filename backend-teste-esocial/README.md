@@ -20,7 +20,6 @@ Tecnologias utilizadas:
 ## Instalação do Back-end
 
 ```bash
-$ git clone https://github.com/luizsantos85/backend-teste-eureka.git
 
 **observar as configurações de portas e usuario no arquivo docker-composer.yml
 
