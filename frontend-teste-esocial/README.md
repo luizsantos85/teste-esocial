@@ -1,24 +1,14 @@
-# frontend-teste-esocial
+# Front-end Teste E-social
 
-## Project setup
-```
-npm install
-```
+## Instalação do projeto
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
+$ cd frontend-teste-esocial
+$ npm install
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Iniciando o projeto
 
-### Lints and fixes files
 ```
-npm run lint
+$ npm run serve
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
