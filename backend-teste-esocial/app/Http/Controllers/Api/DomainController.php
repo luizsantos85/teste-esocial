@@ -22,6 +22,17 @@ class DomainController extends Controller
         return response()->json($domain, 200);
     }
 
+    public function show($id)
+    {
+        $domain = $this->domain->find($id);
+
+        if (!$domain) {
+            return response()->json(['error' => 'ID não encontrado!'], 404);
+        }
+
+        return response()->json($domain, 200);
+    }
+
     public function store(StoreUpdateDomainFormRequest $request)
     {
         $domain = $this->domain->create($request->all());
@@ -37,5 +48,17 @@ class DomainController extends Controller
 
         $domain->update($request->all());
         return response()->json($domain, 200);
+    }
+
+    public function destroy($id)
+    {
+        $domain = $this->domain->find($id);
+
+        if (!$domain) {
+            return response()->json(['error' => 'ID não encontrado!'], 404);
+        }
+
+        $domain->delete();
+        return response()->json([], 200);
     }
 }
