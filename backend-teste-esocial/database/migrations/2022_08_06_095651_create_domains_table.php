@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('dominios', function (Blueprint $table) {
+        Schema::create('domains', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('tld');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dominios');
+        Schema::dropIfExists('domains');
     }
 };
