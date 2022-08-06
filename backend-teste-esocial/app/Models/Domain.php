@@ -11,4 +11,12 @@ class Domain extends Model
 
     protected $fillable = ['name', 'tld'];
 
+    public function getDomains($filter = null)
+    {
+        if (!$filter) {
+            return $this->get();
+        }
+
+        return $this->where('name', 'LIKE', "%{$filter}%")->get();
+    }
 }
