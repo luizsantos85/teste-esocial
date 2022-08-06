@@ -40,7 +40,7 @@ $ composer install
 **Gerar a key do laravel
 $ php artisan key:generate
 
-**acessar localhost:8000/api/ping para verificar se o sistema esta rodando
+**acessar localhost:8000/ping para verificar se o sistema esta rodando
 
 **rodar as migrations para gerar as tabelas do banco de dados
 $ php artisan migrate
@@ -53,5 +53,9 @@ $ docker compose down
 ## Rotas
 
 ```bash
-* Post('localhost:8000/api/');
+* GET('localhost:8000/domains/');
+* GET('localhost:8000/domain/id');
+* POST('localhost:8000/domain/');
+* PUT('localhost:8000/domain/id');
+* DELETE('localhost:8000/domain/id');
 ```
