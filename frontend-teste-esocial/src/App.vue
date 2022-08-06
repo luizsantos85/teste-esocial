@@ -3,23 +3,17 @@
       <div class="text-center mt-4">
          <h1>Projeto Gerenciamento de domínio</h1>
          <h6 class="text-secondary">
-            Projeto desenvolvido para fins de capacitação. <span class="fa fa-check"></span>
+            Projeto desenvolvido para fins de capacitação.
          </h6>
       </div>
       <div class="bg-secondary py-3 mt-4">
          <div class="container">
-            <div class="row text-white">
-               <div class="col-md-6">
-                <h5>Sufixo <span class="badge bg-info">0</span></h5>
-                  <div class="card">
-                     <div class="card-body"></div>
-                  </div>
+            <div class="d-flex justify-content-center text-white">
+               <div class="col-md-8">
+               <div class="card">
+                  <div class="card-title">Domínios Registrados <span class="badge bg-light">0</span></div>
                </div>
-               <div class="col-md-6">
-                <h5>Prefixo <span class="badge bg-info">0</span></h5>
-                  <div class="card">
-                     <div class="card-body"></div>
-                  </div>
+
                </div>
             </div>
          </div>
