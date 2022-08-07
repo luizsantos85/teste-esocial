@@ -12,14 +12,14 @@
       <div class="card-body text-secondary">
          <ul class="list-group">
             <li
-               v-for="(item, index) in data"
-               :key="index"
+               v-for="item in data"
+               :key="item.id"
                class="list-group-item d-flex justify-content-between"
             >
-               {{ item }}
+               {{ item.name }}
 
                <div class="buttons">
-                  <button @click="edit(index)">Editar</button>
+                  <button @click="edit(item.id)">Editar</button>
                   <button>Excluir</button>
                </div>
             </li>
@@ -34,8 +34,8 @@ export default {
    props: ['title', 'data'],
    methods: {
       edit(id) {
-        console.log(`clicou em ${id}`)
-        //  this.$router.push(`/edit/${id}`);
+         console.log(`clicou em ${id}`);
+         //  this.$router.push(`/edit/${id}`);
       },
    },
 };

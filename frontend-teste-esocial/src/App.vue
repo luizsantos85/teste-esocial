@@ -1,6 +1,6 @@
 <template>
    <div>
-      <div class="text-center mt-4">
+      <div class="text-center mt-4 theader">
          <h1>Projeto Gerenciamento de Domínios</h1>
          <h6 class="text-secondary">
             Projeto desenvolvido para fins de capacitação.
@@ -20,4 +20,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.theader {
+   border-bottom: 1px solid #ccc;
+}
+</style>

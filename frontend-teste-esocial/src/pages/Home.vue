@@ -3,7 +3,7 @@
       <div class="container">
          <div class="d-flex justify-content-around text-white">
             <div class="col-md-5">
-               <ListDomains title="Domínios Registrados" :data="domains" />
+               <ListDomains title="Domínios cadastrados" :data="domains" />
             </div>
          </div>
       </div>
@@ -23,8 +23,15 @@ export default {
    },
    data() {
       return {
-         domains: ['lhscode', 'lhscode', 'lhscode', 'lhscode'],
+         domains: {},
       };
+   },
+   created() {
+      fetch(`http://localhost:8000/domains`)
+         .then((res) => res.json())
+         .then((json) => {
+            this.domains = json;
+         });
    },
 };
 </script>
