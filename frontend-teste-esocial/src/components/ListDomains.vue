@@ -20,7 +20,7 @@
 
                <div class="buttons">
                   <button @click="edit(item.id)">Editar</button>
-                  <button>Excluir</button>
+                  <button @click="destroy(item.id)">Excluir</button>
                </div>
             </li>
          </ul>
@@ -29,12 +29,20 @@
 </template>
 
 <script>
+import { Api } from '../services/apiDomains';
+
 export default {
    name: 'ListDomains',
    props: ['title', 'data'],
    methods: {
       edit(id) {
-          this.$router.push(`/edit/${id}`);
+         this.$router.push(`/edit/${id}`);
+      },
+      async destroy(id) {
+         if (window.confirm(`Deseja realmente excluir o item ${id}?`)) {
+            await Api.deleteDomain(id);
+            window.location.href = '/';
+         }
       },
    },
 };
