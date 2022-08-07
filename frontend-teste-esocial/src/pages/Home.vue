@@ -15,7 +15,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 
 import ListDomains from '../components/ListDomains';
-import {Api} from '../services/apiDomains';
+import { Api } from '../services/apiDomains';
 
 export default {
    name: 'Home',
@@ -28,8 +28,8 @@ export default {
       };
    },
    async created() {
-    let json = await  Api.getDomains();
-    this.domains = json;
+      let json = await Api.getDomains();
+      this.domains = json;
    },
 };
 </script>

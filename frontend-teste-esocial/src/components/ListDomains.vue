@@ -16,7 +16,7 @@
                :key="item.id"
                class="list-group-item d-flex justify-content-between"
             >
-               {{ item.name }}
+               {{ item.name + item.tld }}
 
                <div class="buttons">
                   <button @click="edit(item.id)">Editar</button>
@@ -34,8 +34,7 @@ export default {
    props: ['title', 'data'],
    methods: {
       edit(id) {
-         console.log(`clicou em ${id}`);
-         //  this.$router.push(`/edit/${id}`);
+          this.$router.push(`/edit/${id}`);
       },
    },
 };

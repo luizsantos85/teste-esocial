@@ -3,6 +3,7 @@ import Router from 'vue-router';
 
 import Home from './pages/Home';
 import AddDomain from './pages/AddDomain';
+import EditDomain from './pages/EditDomain';
 
 Vue.use(Router);
 
@@ -19,7 +20,7 @@ export default new Router({
       },
       {
          path: '/edit/:id',
-         component: AddDomain,
+         component: EditDomain,
          props: true,
       },
    ],
