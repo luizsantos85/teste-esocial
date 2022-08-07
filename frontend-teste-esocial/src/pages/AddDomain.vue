@@ -2,7 +2,7 @@
    <section class="container">
       <h1 class="text-center mt-5">Adicionar Domínio</h1>
 
-      <form>
+      <form @submit.prevent="addDomain">
          <div class="d-flex justify-content-center mt-4 align-bottom">
             <div class="col-md-5">
                <label for="name" class="form-label"
@@ -30,17 +30,19 @@
          </div>
 
          <div class="d-flex justify-content-center mt-3">
-            <button type="button" class="btn btn-primary">Adicionar</button>
+            <button type="submit" class="btn btn-primary">Adicionar</button>
          </div>
       </form>
-      
-      <p v-if="fullDomain" class="text-center mt-3">
+
+      <p v-show="fullDomain" class="text-center mt-3">
          O domínio registrado será: <strong> {{ fullDomain }}</strong>
       </p>
    </section>
 </template>
 
 <script>
+import { Api } from '../services/apiDomains';
+
 export default {
    name: 'AddDomain',
    data() {
@@ -52,6 +54,16 @@ export default {
    computed: {
       fullDomain() {
          return (this.name + this.tld).toLowerCase();
+      },
+   },
+   methods: {
+      async addDomain() {
+         await Api.postDomain({
+            name: this.name.toLowerCase(),
+            tld: this.tld.toLowerCase(),
+         });
+
+         this.$router.push('/');
       },
    },
 };
