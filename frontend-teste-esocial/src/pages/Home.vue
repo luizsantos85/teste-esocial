@@ -15,6 +15,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 
 import ListDomains from '../components/ListDomains';
+import {Api} from '../services/apiDomains';
 
 export default {
    name: 'Home',
@@ -26,12 +27,9 @@ export default {
          domains: {},
       };
    },
-   created() {
-      fetch(`http://localhost:8000/domains`)
-         .then((res) => res.json())
-         .then((json) => {
-            this.domains = json;
-         });
+   async created() {
+    let json = await  Api.getDomains();
+    this.domains = json;
    },
 };
 </script>
