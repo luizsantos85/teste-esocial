@@ -3,7 +3,7 @@
       <div class="container">
          <div class="d-flex justify-content-around text-white">
             <div class="col-md-5">
-               <ListDomains title="Domínios cadastrados" :data="domains" />
+               <list-domains title="Domínios cadastrados" :data="domains" />
             </div>
          </div>
       </div>
@@ -20,7 +20,7 @@ import { Api } from '../services/apiDomains';
 export default {
    name: 'Home',
    components: {
-      ListDomains,
+      ListDomains
    },
    data() {
       return {

@@ -40,7 +40,7 @@
 import { Api } from '../services/apiDomains';
 
 export default {
-   name: 'AddDomain',
+   name: 'EditDomain',
    props: ['id'],
    data() {
       return {
