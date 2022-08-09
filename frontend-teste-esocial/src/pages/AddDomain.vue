@@ -3,10 +3,6 @@
       <h1 class="text-center mt-5">Adicionar Domínio</h1>
 
       <form-request @onSubmit="onSubmit" />
-
-      <p v-show="fullDomain" class="text-center mt-3">
-         O domínio registrado será: <strong> {{ fullDomain }}</strong>
-      </p>
    </section>
 </template>
 
@@ -18,24 +14,18 @@ export default {
    components: { FormRequest },
    name: 'AddDomain',
    data() {
-      return {
-         name: '',
-         tld: '',
-      };
+      return {};
    },
-   // computed: {
-   //    fullDomain(name,tld) {
-   //       return (name + tld).toLowerCase();
-   //    },
-   // },
    methods: {
       async onSubmit(name, tld) {
-         await Api.postDomain({
-            name: name.toLowerCase(),
-            tld: tld.toLowerCase(),
-         });
+         if (name && tld) {
+            await Api.postDomain({
+               name: name.toLowerCase(),
+               tld: tld.toLowerCase(),
+            });
 
-         this.$router.push('/');
+            this.$router.push('/');
+         }
       },
    },
 };
