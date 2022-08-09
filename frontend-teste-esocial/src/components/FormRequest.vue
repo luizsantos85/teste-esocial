@@ -91,7 +91,7 @@ export default {
          this.updated_at = json.updated_at;
       }
    },
-   
+
    filters: {
       formatDate: function (value) {
          if (value === null) {
